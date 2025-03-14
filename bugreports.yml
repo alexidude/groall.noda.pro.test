@@ -1,0 +1,46 @@
+---
+- summary: |
+    Баланс токенов после вывода не меняется
+  priority: |
+    High
+  environment: |
+    Google Chrome Version 134.0.6998.89 (Official Build) (64-bit)
+    ОС Windows 10 Enterprise
+  steps-to-reproduce: |
+    1. В поле вывода коинов ввести значение 1000
+    2. Нажать кнопку "Вывести"
+  expected-result: |
+    Отображено сообщение "Токены списаны, всего списано 1000, осталось 121000"
+    Баланс в форме вывода 121000
+  actual-result: |
+    Баланс в форме вывода по-прежнему 122000
+
+- summary: |
+    В сообщении о списании средств указаны токены вместо коинов
+  priority: |
+    High
+  environment: |
+    Google Chrome Version 134.0.6998.89 (Official Build) (64-bit)
+    ОС Windows 10 Enterprise
+  steps-to-reproduce: |
+    1. В поле вывода коинов ввести значение 1000
+    2. Нажать кнопку "Вывести"
+  expected-result: |
+    Отображено сообщение "Коины списаны, всего списано 1000, осталось 121000"
+  actual-result: |
+    Отображено сообщение "Токены списаны, всего списано 1000, осталось 121000"
+
+ - summary: |
+    Система позволяет выводить больше средств, чем есть на балансе
+  priority: |
+    High
+  environment: |
+    Google Chrome Version 134.0.6998.89 (Official Build) (64-bit)
+    ОС Windows 10 Enterprise
+  steps-to-reproduce: |
+    1. В поле вывода коинов ввести значение 122001
+    2. Нажать кнопку "Вывести"
+  expected-result: |
+     Отображено сообщение "Недостаточно средств"
+  actual-result: |
+    Отображено сообщение "Токены списаны, всего списано 122001, осталось -1"   
