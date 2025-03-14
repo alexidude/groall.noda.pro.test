@@ -9,7 +9,7 @@ status: fail
 
 - summary: |
    3. Вывод дробного значения
-status: fail  
+status: pass  
 
 - summary: |
    4. Вывод средств со счёта при вводе отрицательной суммы
